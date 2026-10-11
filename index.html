@@ -1,0 +1,213 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        background-color: #380070;
+        color: #293047;
+    }
+    .auth-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .auth-card {
+        width: 100%;
+        max-width: 440px;
+        padding: 36px;
+        background: #ffffff;
+        border: 1px solid #e3e5ef;
+        border-radius: 16px;
+        box-shadow: 0 14px 38px rgba(66, 72, 120, 0.13);
+    }
+    .auth-card h1 {
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        color: #414c83;
+    }
+
+    .subtitle {
+        margin-bottom: 28px;
+        text-align: center;
+        color: #777d91;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .form-group {
+        margin-bottom: 19px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #3f465b;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .form-group input {
+        display: block;
+        width: 100%;
+        padding: 13px 14px;
+        border: 1px solid #d8dbea;
+        border-radius: 9px;
+        background: #fafaff;
+        color: #30364b;
+        font-size: 15px;
+        transition: border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+    }
+
+    .form-group input::placeholder {
+        color: #9a9eb0;
+    }
+
+    .form-group input:focus {
+        outline: none;
+        border-color: #7885ce;
+        background: #ffffff;
+        box-shadow: 0 0 0 3px rgba(120, 133, 206, 0.13);
+    }
+
+    .auth-button {
+        display: block;
+        width: 100%;
+        margin-top: 24px;
+        padding: 14px;
+        border: none;
+        border-radius: 9px;
+        background: linear-gradient(135deg, #6679c7, #8064a7);
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.25s ease,
+                box-shadow 0.25s ease,
+                transform 0.25s ease;
+    }
+
+    .auth-button:hover {
+        background: linear-gradient(135deg, #5265b2, #6b508f);
+        box-shadow: 0 7px 17px rgba(91, 93, 166, 0.23);
+        transform: translateY(-2px);
+    }
+
+    .auth-button:active {
+        transform: scale(0.98);
+        box-shadow: none;
+    }
+
+    .auth-button:focus-visible {
+        outline: 3px solid rgba(102, 121, 199, 0.3);
+        outline-offset: 3px;
+    }
+
+    .message {
+        margin-top: 14px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .message.success {
+        color: #26764f;
+    }
+
+    .message.error {
+        color: #bd4545;
+    }
+    
+    @media (max-width: 480px) {
+        body {
+            padding: 16px;
+        }
+        .auth-card {
+            padding: 28px 21px;
+            border-radius: 13px;
+        }
+
+        .auth-card h1 {
+            font-size: 25px;
+        }
+
+        .subtitle {
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        .form-group input {
+            padding: 12px;
+            font-size: 16px;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+  <main class="auth-container">
+    <section class="auth-card">
+
+      <h1>Create Account</h1>
+      <p class="subtitle">Sign up to get started</p>
+
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your full name"
+                 autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email"
+                 autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password"
+                 placeholder="Create a password"
+                 autocomplete="new-password"
+                 minlength="6" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword"
+                 placeholder="Enter your password again"
+                 autocomplete="new-password" required>
+        </div>
+
+        <button type="submit" class="auth-button">Sign Up</button>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </form>
+
+    </section>
+  </main>
+
+
+
+  <script src="./app.js"></script>
+</body>
+</html>
